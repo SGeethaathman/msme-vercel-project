@@ -15,12 +15,13 @@ app = Flask(__name__)
 # =====================================================
 # ⚠ Change password if needed
 DB_CONFIG = {
-    "host": "db",              # PostgreSQL server host
-    "port": 5432,              # Default PostgreSQL port
-    "database": "msme_db",     # Database name
-    "user": "postgres",        # PostgreSQL username
-    "password": "Moy31311"     # PostgreSQL password
+    "host": os.environ.get("DB_HOST"),
+    "port": os.environ.get("DB_PORT"),
+    "database": os.environ.get("DB_NAME"),
+    "user": os.environ.get("DB_USER"),
+    "password": os.environ.get("DB_PASSWORD")
 }
+
 
 # Folder to store uploaded certificate images
 CERT_FOLDER = "certificate_uploads"
